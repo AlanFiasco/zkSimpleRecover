@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.recover.protos;
+
+option java_multiple_files = true;
+option java_package = "com.recover.protos";
+option java_outer_classname = "NodeProtos";
+
+message Node {
+  optional string databaseName = 1;
+  optional string path = 2;
+  optional string context = 3;
+}
+message NodeMessage {
+  map<string, Node> message = 1;
+}

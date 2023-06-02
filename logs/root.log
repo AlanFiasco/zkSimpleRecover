@@ -1,0 +1,994 @@
+2023-06-01 10:15:07 CuratorFrameworkImpl.java INFO Starting
+2023-06-01 10:15:07 Environment.java INFO Client environment:zookeeper.version=3.6.3--6401e4ad2087061bc6b9f80dec2d69f2e3c8660a, built on 04/08/2021 16:35 GMT
+2023-06-01 10:15:07 Environment.java INFO Client environment:host.name=LAPTOP-JHS08TV8
+2023-06-01 10:15:07 Environment.java INFO Client environment:java.version=11.0.13
+2023-06-01 10:15:07 Environment.java INFO Client environment:java.vendor=Oracle Corporation
+2023-06-01 10:15:07 Environment.java INFO Client environment:java.home=D:\Program Files\Java\jdk-11.0.13
+2023-06-01 10:15:07 Environment.java INFO Client environment:java.class.path=D:\IDEA_workspace\metadata_recover\target\classes;D:\Tools\maven\repository\org\apache\curator\curator-framework\5.3.0\curator-framework-5.3.0.jar;D:\Tools\maven\repository\org\apache\curator\curator-client\5.3.0\curator-client-5.3.0.jar;D:\Tools\maven\repository\org\apache\zookeeper\zookeeper\3.6.3\zookeeper-3.6.3.jar;D:\Tools\maven\repository\org\apache\zookeeper\zookeeper-jute\3.6.3\zookeeper-jute-3.6.3.jar;D:\Tools\maven\repository\org\apache\yetus\audience-annotations\0.5.0\audience-annotations-0.5.0.jar;D:\Tools\maven\repository\io\netty\netty-handler\4.1.63.Final\netty-handler-4.1.63.Final.jar;D:\Tools\maven\repository\io\netty\netty-common\4.1.63.Final\netty-common-4.1.63.Final.jar;D:\Tools\maven\repository\io\netty\netty-resolver\4.1.63.Final\netty-resolver-4.1.63.Final.jar;D:\Tools\maven\repository\io\netty\netty-buffer\4.1.63.Final\netty-buffer-4.1.63.Final.jar;D:\Tools\maven\repository\io\netty\netty-transport\4.1.63.Final\netty-transport-4.1.63.Final.jar;D:\Tools\maven\repository\io\netty\netty-codec\4.1.63.Final\netty-codec-4.1.63.Final.jar;D:\Tools\maven\repository\io\netty\netty-transport-native-epoll\4.1.63.Final\netty-transport-native-epoll-4.1.63.Final.jar;D:\Tools\maven\repository\io\netty\netty-transport-native-unix-common\4.1.63.Final\netty-transport-native-unix-common-4.1.63.Final.jar;D:\Tools\maven\repository\com\google\guava\guava\27.0.1-jre\guava-27.0.1-jre.jar;D:\Tools\maven\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;D:\Tools\maven\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;D:\Tools\maven\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;D:\Tools\maven\repository\org\checkerframework\checker-qual\2.5.2\checker-qual-2.5.2.jar;D:\Tools\maven\repository\com\google\errorprone\error_prone_annotations\2.2.0\error_prone_annotations-2.2.0.jar;D:\Tools\maven\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;D:\Tools\maven\repository\org\codehaus\mojo\animal-sniffer-annotations\1.17\animal-sniffer-annotations-1.17.jar;D:\Tools\maven\repository\org\apache\curator\curator-recipes\5.3.0\curator-recipes-5.3.0.jar;D:\Tools\maven\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;D:\Tools\maven\repository\org\slf4j\slf4j-api\2.0.5\slf4j-api-2.0.5.jar;D:\Tools\maven\repository\org\slf4j\slf4j-reload4j\2.0.5\slf4j-reload4j-2.0.5.jar;D:\Tools\maven\repository\ch\qos\reload4j\reload4j\1.2.22\reload4j-1.2.22.jar;D:\Tools\maven\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\Tools\maven\repository\com\mysql\mysql-connector-j\8.0.31\mysql-connector-j-8.0.31.jar;D:\Tools\maven\repository\com\google\protobuf\protobuf-java\3.19.4\protobuf-java-3.19.4.jar;D:\Program Files\apps\IDEA-C\ch-0\231.8770.65\lib\idea_rt.jar
+2023-06-01 10:15:07 Environment.java INFO Client environment:java.library.path=D:\Program Files\Java\jdk-11.0.13\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\Program Files\Python\Scripts\;D:\Program Files\Python\;D:\Program Files\Java\jdk-11.0.13\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\dotnet\;D:\Program Files\apache-maven-3.8.1\bin\;D:\Program Files\mysql-8.0.28-winx64\bin\;D:\Program Files\Git\bin\git.exe;C:\ProgramData\chocolatey\bin;D:\Program Files\LxRunOffline;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;D:\Program Files\mysql-8.0.28-winx64\bin;C:\tools\lxrunoffline;D:\Program Files\Java\jdk-11.0.13\lib\;C:\Users\powersi\AppData\Local\Microsoft\WindowsApps;C:\Users\powersi\AppData\Local\Programs\EmEditor;C:\Users\powersi\AppData\Roaming\npm;D:\Users\powersi\AppData\Local\Programs\Microsoft VS Code\bin;D:\Program Files\JetBrains\GoLand 2022.2.3\bin;D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.3\bin;C:\Users\powersi\AppData\Local\JetBrains\Toolbox\scripts;;.
+2023-06-01 10:15:07 Environment.java INFO Client environment:java.io.tmpdir=C:\Users\powersi\AppData\Local\Temp\
+2023-06-01 10:15:07 Environment.java INFO Client environment:java.compiler=<NA>
+2023-06-01 10:15:07 Environment.java INFO Client environment:os.name=Windows 10
+2023-06-01 10:15:07 Environment.java INFO Client environment:os.arch=amd64
+2023-06-01 10:15:07 Environment.java INFO Client environment:os.version=10.0
+2023-06-01 10:15:07 Environment.java INFO Client environment:user.name=powersi
+2023-06-01 10:15:07 Environment.java INFO Client environment:user.home=C:\Users\powersi
+2023-06-01 10:15:07 Environment.java INFO Client environment:user.dir=D:\IDEA_workspace\metadata_recover
+2023-06-01 10:15:07 Environment.java INFO Client environment:os.memory.free=234MB
+2023-06-01 10:15:07 Environment.java INFO Client environment:os.memory.max=4056MB
+2023-06-01 10:15:07 Environment.java INFO Client environment:os.memory.total=254MB
+2023-06-01 10:15:07 ZooKeeper.java INFO Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=5000 watcher=org.apache.curator.ConnectionState@3c46e67a
+2023-06-01 10:15:07 X509Util.java INFO Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2023-06-01 10:15:08 ClientCnxnSocket.java INFO jute.maxbuffer value is 1048575 Bytes
+2023-06-01 10:15:08 ClientCnxn.java INFO zookeeper.request.timeout value is 0. feature enabled=false
+2023-06-01 10:15:08 ClientCnxn.java INFO Opening socket connection to server activate.navicat.com/127.0.0.1:2181.
+2023-06-01 10:15:08 CuratorFrameworkImpl.java INFO Default schema
+2023-06-01 10:15:08 ClientCnxn.java INFO SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2023-06-01 10:15:08 ClientCnxn.java INFO Socket connection established, initiating session, client: /127.0.0.1:7576, server: activate.navicat.com/127.0.0.1:2181
+2023-06-01 10:15:08 ClientCnxn.java INFO Session establishment complete on server activate.navicat.com/127.0.0.1:2181, session id = 0x1000043082d0014, negotiated timeout = 5000
+2023-06-01 10:15:08 ConnectionStateManager.java INFO State change: CONNECTED
+2023-06-01 10:15:08 Compatibility.java INFO Using org.apache.zookeeper.server.quorum.MultipleAddresses
+2023-06-01 10:15:08 EnsembleTracker.java INFO New config event received: {}
+2023-06-01 10:15:08 EnsembleTracker.java INFO New config event received: {}
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /lock	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /rules	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /props	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /worker_id	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/storage_nodes	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /lock/ack	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /lock/locks	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/leader	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/servers	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/config	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/instances	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/active_version	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/versions	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/active_version	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/versions	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/leader	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/servers	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/config	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/instances	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/storage_nodes/online	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/storage_nodes/attributes	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes/online	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes/attributes	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/leader	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/servers	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/config	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/instances	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/leader	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/servers	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/config	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/instances	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/leader/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/servers/172.16.64.227	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/sharding/0	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/partitions	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/keywords	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/schemata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/columns	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/collations	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/triggers	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/character_sets	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/datasource_status	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/processlist	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/tables	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/key_column_usage	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/profiling	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/engines	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/collation_character_set_applicability	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/files	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/routines	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/parameters	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/views	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/tables/statistics	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/versions/0	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables/t_server_prepare_test_2	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables/bi_business_analyse_index_day	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables/t_update_base_test_1	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables/t_server_prepare_test_1	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables/t_select_base_test_2	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables/t_select_base_test_1	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables/t_select_base_test_4	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/tables/t_select_base_test_3	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/versions/0	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/leader/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/servers/172.16.64.227	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/sharding/0	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/storage_nodes/online/data_node_1_s_1	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/storage_nodes/online/data_node_1_m_1	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/storage_nodes/attributes/data_node_2	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/storage_nodes/attributes/data_node_1	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes/online/proxy	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes/online/rpc	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes/attributes/172.16.64.227@3310	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes/attributes/172.16.64.227@3307	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/leader/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/servers/172.16.64.227	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/sharding/0	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/leader/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/servers/172.16.64.227	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/sharding/0	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/enum_test_partition	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_new	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/enum_test_simple	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_new_single	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/prep_part_order	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_drop_table_test	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test_bak	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_single	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/leader	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/servers	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/config	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/instances	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /distributed_lock/DistributedLock/sharding/0/instance	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/information_schema/versions/0/rules	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /metadata/powersql_test/versions/0/rules	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /scaling/_finished_check/sharding/0/instance	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes/attributes/172.16.64.227@3310/worker_id	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /nodes/compute_nodes/attributes/172.16.64.227@3307/worker_id	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_s_1/sharding/0/instance	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /heartbeat_job/data_node_1_m_1/sharding/0/instance	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/enum_test_partition/enum_test_partition_1682217616323	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_new/t_create_table_test_new_1682217607255	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/enum_test_simple/enum_test_simple_1682217616391	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_new_single/t_create_table_test_new_single_1682217614747	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216613911	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216631263	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216629223	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216628099	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219626987	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219676926	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216694480	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216642513	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219653491	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219661303	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219638128	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216692015	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216698236	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216717082	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219640244	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216611422	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216637412	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216616796	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216681499	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216676001	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219621804	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219651433	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216643896	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216624203	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216700384	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219629371	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216709557	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216702080	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219649200	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216683681	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216677802	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216713529	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216705596	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219644274	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216632411	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216722792	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219668940	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216718951	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216635924	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219673031	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216689669	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216641200	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216646538	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216696237	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216620351	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216640121	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216703981	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216645176	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216669860	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219662970	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216687695	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216634825	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216674125	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219666734	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216612698	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216633575	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216638846	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216715410	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219674835	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216711094	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219646468	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216685830	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219670876	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216720667	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219655659	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219679844	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216667666	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219636168	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216621750	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219633493	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219631471	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216647645	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219659535	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216615273	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216672138	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216619234	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216622833	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219657713	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219664801	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219623571	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216617971	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216626080	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216707553	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219642033	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/prep_part_order/prep_part_order_1682217320723	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219377166	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219379837	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219374313	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219384326	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219389111	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217593153	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217607126	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217609709	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217604179	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217600764	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_drop_table_test/t_drop_table_test_1682218826301	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test_bak/t_alter_table_test_bak_1682217513000	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test_bak/t_alter_table_test_bak_1682217529766	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217494585	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217510328	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217523833	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217497642	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217502269	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217521138	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217532142	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217512898	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217518380	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217503938	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217506758	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217526350	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_single/t_create_table_test_single_1682217614693	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_single/t_create_table_test_single_1682217612131	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/leader/sharding	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/servers/172.16.64.227	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/sharding/0	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/enum_test_partition/enum_test_partition_1682217616323/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/enum_test_partition/enum_test_partition_1682217616323/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_new/t_create_table_test_new_1682217607255/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_new/t_create_table_test_new_1682217607255/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/enum_test_simple/enum_test_simple_1682217616391/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/enum_test_simple/enum_test_simple_1682217616391/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_new_single/t_create_table_test_new_single_1682217614747/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_new_single/t_create_table_test_new_single_1682217614747/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216613911/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216613911/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216631263/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216631263/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216629223/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216629223/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216628099/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216628099/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219626987/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219626987/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219676926/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219676926/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216694480/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216694480/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216642513/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216642513/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219653491/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219653491/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219661303/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219661303/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219638128/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219638128/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216692015/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216692015/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216698236/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216698236/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216717082/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216717082/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219640244/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219640244/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216611422/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216611422/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216637412/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216637412/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216616796/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216616796/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216681499/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216681499/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216676001/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216676001/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219621804/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219621804/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219651433/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219651433/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216643896/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216643896/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216624203/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216624203/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216700384/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216700384/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219629371/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219629371/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216709557/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216709557/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216702080/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216702080/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219649200/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219649200/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216683681/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216683681/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216677802/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216677802/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216713529/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216713529/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216705596/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216705596/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219644274/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219644274/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216632411/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216632411/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216722792/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216722792/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219668940/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219668940/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216718951/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216718951/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216635924/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216635924/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219673031/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219673031/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216689669/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216689669/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216641200/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216641200/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216646538/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216646538/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216696237/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216696237/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216620351/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216620351/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216640121/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216640121/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216703981/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216703981/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216645176/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216645176/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216669860/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216669860/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219662970/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219662970/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216687695/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216687695/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216634825/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216634825/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216674125/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216674125/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219666734/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219666734/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216612698/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216612698/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216633575/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216633575/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216638846/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216638846/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216715410/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216715410/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219674835/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219674835/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216711094/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216711094/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219646468/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219646468/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216685830/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216685830/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219670876/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219670876/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216720667/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216720667/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219655659/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219655659/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219679844/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219679844/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216667666/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216667666/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219636168/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219636168/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216621750/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216621750/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219633493/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219633493/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219631471/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219631471/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216647645/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216647645/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219659535/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219659535/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216615273/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216615273/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216672138/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216672138/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216619234/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216619234/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216622833/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216622833/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219657713/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219657713/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219664801/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219664801/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219623571/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219623571/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216617971/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216617971/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216626080/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216626080/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216707553/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682216707553/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219642033/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_time_table_base_test/t_time_table_base_test_1682219642033/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/prep_part_order/prep_part_order_1682217320723/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/prep_part_order/prep_part_order_1682217320723/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219377166/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219377166/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219379837/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219379837/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219374313/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219374313/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219384326/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219384326/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219389111/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_index_test/t_create_index_test_1682219389111/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217593153/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217593153/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217607126/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217607126/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217609709/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217609709/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217604179/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217604179/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217600764/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test/t_create_table_test_1682217600764/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_drop_table_test/t_drop_table_test_1682218826301/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_drop_table_test/t_drop_table_test_1682218826301/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test_bak/t_alter_table_test_bak_1682217513000/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test_bak/t_alter_table_test_bak_1682217513000/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test_bak/t_alter_table_test_bak_1682217529766/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test_bak/t_alter_table_test_bak_1682217529766/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217494585/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217494585/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217510328/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217510328/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217523833/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217523833/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217497642/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217497642/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217502269/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217502269/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217521138/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217521138/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217532142/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217532142/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217512898/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217512898/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217518380/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217518380/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217503938/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217503938/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217506758/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217506758/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217526350/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_alter_table_test/t_alter_table_test_1682217526350/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_single/t_create_table_test_single_1682217614693/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_single/t_create_table_test_single_1682217614693/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_single/t_create_table_test_single_1682217612131/metadata	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/tables/powersql_test/t_create_table_test_single/t_create_table_test_single_1682217612131/mapper	更改类型: NODE_ADDED
+2023-06-01 10:15:08 Listener.java INFO 基于/节点的监听触发
+2023-06-01 10:15:08 Listener.java INFO 节点发生更改: /garbage/jobs/GarbageRemoveJob/sharding/0/instance	更改类型: NODE_ADDED
