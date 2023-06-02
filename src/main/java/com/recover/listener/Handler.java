@@ -32,7 +32,7 @@ public class Handler {
         if (event.getType() == TreeCacheEvent.Type.NODE_ADDED) {
             paths.add(event.getData().getPath());
             cacheMap.put(dbName, paths);
-        }else if (event.getType() == TreeCacheEvent.Type.NODE_REMOVED)  {
+        } else if (event.getType() == TreeCacheEvent.Type.NODE_REMOVED) {
             paths.remove(event.getData().getPath());
             cacheMap.put(dbName, paths);
         }
@@ -70,6 +70,9 @@ public class Handler {
         final NodeMessage.Builder messageBuilder = NodeMessage.newBuilder();
         for (String path : paths) {
             if (cache.get(path).isPresent()) {
+                if (path.startsWith(MetadataProperties.getInstance().getIGNORE_DIRECTORY()) || path.equalsIgnoreCase(MetadataProperties.getInstance().getIGNORE_NODE())) {
+                    continue;
+                }
                 String context = new String(cache.get(path).get().getData());
                 final Node node = Node.newBuilder().setDatabaseName(dbName).setPath(path).setContext(context).build();
                 messageBuilder.putMessage(path, node);

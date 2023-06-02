@@ -18,6 +18,8 @@ public class MetadataProperties {
     String LISTEN_PATH;
     int RECOVER_TIME_WINDOW;
     int RECOVER_TRIGGER_THRESHOLD;
+    String  IGNORE_NODE;
+    String  IGNORE_DIRECTORY;
 
     private MetadataProperties() {
         Properties properties = new Properties();
@@ -37,6 +39,8 @@ public class MetadataProperties {
             LISTEN_PATH = properties.getProperty("listenPath");
             RECOVER_TIME_WINDOW = Integer.parseInt(properties.getProperty("recoverTimeWindow"));
             RECOVER_TRIGGER_THRESHOLD = Integer.parseInt(properties.getProperty("recoverTriggerThreshold"));
+            IGNORE_NODE = properties.getProperty("ignoreNode");
+            IGNORE_DIRECTORY = properties.getProperty("ignoreDirectory");
         } catch (Exception e) {
             throw new RuntimeException("load metadata.properties failed");
         }
