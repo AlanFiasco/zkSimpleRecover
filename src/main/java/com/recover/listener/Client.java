@@ -1,31 +1,29 @@
 package com.recover.listener;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.CuratorCache;
 import org.apache.curator.framework.recipes.cache.CuratorCacheListener;
 import org.apache.curator.framework.recipes.cache.TreeCacheEvent;
+import org.apache.curator.framework.recipes.leader.LeaderLatch;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.KeeperException;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class Clinet {
+public class Client {
     private final MetadataProperties metadataProperties = MetadataProperties.getInstance();
     private final Map<String, CuratorCache> caches = new HashMap<>();
-
+    @Getter
     private final CuratorFramework client;
-
-    public final Map<String, HashSet<String>> cachePaths = new ConcurrentHashMap<>();
     int RETRY_INTERVAL_MS = metadataProperties.RETRY_INTERVAL_MS;
     int MAX_RETRIES = metadataProperties.MAX_RETRIES;
     int SESSION_TIMEOUT_MS = metadataProperties.SESSION_TIMEOUT_MS;
@@ -33,7 +31,7 @@ public class Clinet {
     String connectString = metadataProperties.CONNECT_STRING;
     String namespace = metadataProperties.NAMESPACE;
 
-    public Clinet() {
+    public Client() {
         CuratorFrameworkFactory.Builder builder = CuratorFrameworkFactory.builder();
         builder.connectString(connectString).retryPolicy(new ExponentialBackoffRetry(RETRY_INTERVAL_MS, MAX_RETRIES, RETRY_INTERVAL_MS * MAX_RETRIES)).namespace(namespace).sessionTimeoutMs(SESSION_TIMEOUT_MS).connectionTimeoutMs(CONNECTION_TIMEOUT_MS);
         client = builder.build();
@@ -87,7 +85,7 @@ public class Clinet {
         }
     }
 
-    public void addListener(final String rawKey, final Handler handler) {
+    public void addListener(final String rawKey, final Handler handler, LeaderLatch leaderLatch) {
         String key = rawKey.toLowerCase();
         if (!caches.containsKey(key)) {
             addCacheData(key);
@@ -98,7 +96,7 @@ public class Clinet {
                     case NODE_ADDED:
                     case NODE_UPDATED:
                     case NODE_REMOVED: {
-                        handler.onChanged(cache, rawKey, treeCacheEvent);
+                        handler.onChanged(cache, rawKey, treeCacheEvent, leaderLatch);
                         break;
                     }
                     default:

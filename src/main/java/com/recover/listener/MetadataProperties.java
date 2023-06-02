@@ -21,7 +21,7 @@ public class MetadataProperties {
 
     private MetadataProperties() {
         Properties properties = new Properties();
-        final InputStream resource = Clinet.class.getResourceAsStream("/metadata.properties");
+        final InputStream resource = Client.class.getResourceAsStream("/metadata.properties");
         try {
             properties.load(resource);
         } catch (IOException e) {

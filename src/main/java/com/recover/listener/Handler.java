@@ -6,6 +6,7 @@ import com.recover.protos.NodeMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.recipes.cache.CuratorCache;
 import org.apache.curator.framework.recipes.cache.TreeCacheEvent;
+import org.apache.curator.framework.recipes.leader.LeaderLatch;
 
 
 import java.util.HashMap;
@@ -23,7 +24,7 @@ public class Handler {
     final static Map<String, Long> TIME_WINDOW_MAP = new HashMap<>();
     final static Map<String, HashSet<String>> cacheMap = new HashMap<>();
 
-    public void onChanged(CuratorCache cache, String dbName, TreeCacheEvent event) {
+    public void onChanged(CuratorCache cache, String dbName, TreeCacheEvent event, LeaderLatch leaderLatch) {
         HashSet<String> paths = cacheMap.get(dbName);
         if (null == paths) {
             paths = new HashSet<>();
@@ -36,7 +37,12 @@ public class Handler {
             cacheMap.put(dbName, paths);
         }
         if (isThresholdMet(dbName)) {
-            exportData(cache, dbName, paths);
+            if (leaderLatch.hasLeadership()) {
+                // 只有Leader节点才能执行的操作
+                exportData(cache, dbName, paths);
+            } else {
+                log.info("Need leader to execute export data");
+            }
         }
     }
 

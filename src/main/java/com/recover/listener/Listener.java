@@ -5,6 +5,9 @@ import com.recover.conn.Connector;
 import com.recover.protos.Node;
 import com.recover.protos.NodeMessage;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.curator.framework.recipes.leader.LeaderLatch;
+import org.apache.curator.framework.recipes.leader.LeaderLatchListener;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,18 +19,37 @@ import static java.lang.System.in;
 
 @Slf4j()
 public class Listener {
-    private final Clinet clinet;
+    private final Client client;
+    private final LeaderLatch leaderLatch;
 
     public Listener() {
-        clinet = new Clinet();
+        client = new Client();
+        leaderLatch = new LeaderLatch(client.getClient(), "/zkRecoverElection");
+        leaderLatch.addListener(new LeaderLatchListener() {
+            @Override
+            public void isLeader() {
+                // 只有Leader会触发此方法
+                log.info("isLeader");
+            }
+            @Override
+            public void notLeader() {
+                // 非Leader不会触发此方法
+                log.info("Not Leader");
+            }
+        });
+        try {
+            leaderLatch.start();
+        } catch (Exception e) {
+            throw new RuntimeException("leaderLatch start failed "+e);
+        }
     }
 
     public void listen() {
         String metadataPath = MetadataProperties.getInstance().LISTEN_PATH;
         //遍历metadataPath，对单个库进行监听
-        final List<String> db_names = clinet.getChildren(metadataPath);
+        final List<String> db_names = client.getChildren(metadataPath);
         for (String dbName : db_names) {
-            clinet.addListener(metadataPath + "/" + dbName, new Handler());
+            client.addListener(metadataPath + "/" + dbName, new Handler(), leaderLatch);
         }
         Scanner sc = new Scanner(in);
         while (sc.hasNext()) {
@@ -50,7 +72,7 @@ public class Listener {
                 for (Map.Entry<String, Node> entry : messageMap.entrySet()) {
                     final String key = entry.getKey();
                     final Node node = entry.getValue();
-                    clinet.addOrSetNode(key, node.getContext());
+                    client.addOrSetNode(key, node.getContext());
                 }
             }
         } catch (SQLException e) {
