@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.Map;
 
 @Slf4j
-public class Exporter implements Runnable {
+public class DataExporter implements Runnable {
     private final String dbNamePath;
     private final CuratorCache cache;
     private final HashSet<String> allDbPaths;
@@ -31,7 +31,7 @@ public class Exporter implements Runnable {
 
     static final Map<String, Long> TIME_WINDOW_MAP = new HashMap<>();
 
-    public Exporter(CuratorCache cache, String dbNamePath, HashSet<String> allDbPaths) {
+    public DataExporter(CuratorCache cache, String dbNamePath, HashSet<String> allDbPaths) {
         this.cache = cache;
         this.dbNamePath = dbNamePath;
         this.allDbPaths = allDbPaths;
@@ -86,12 +86,15 @@ public class Exporter implements Runnable {
                     continue;
                 }
                 String context = new String(cache.get(path).get().getData());
+                //构造单个节点
                 final Node node = Node.newBuilder().setDatabaseName(dbNamePath).setPath(path).setContext(context).build();
                 messageBuilder.putMessage(path, node);
             }
         }
         final Connector connector = new Connector();
+        //构造库下所有节点
         final NodeMessage nodeMassage = messageBuilder.build();
+        //序列化
         final byte[] byteArray = nodeMassage.toByteArray();
         final long snowFlakeId = snowFlake.getNextId();
         String sql = "insert into zk_backup values(?,?,?,?,?)";

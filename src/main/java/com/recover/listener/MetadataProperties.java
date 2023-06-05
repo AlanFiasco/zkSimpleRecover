@@ -41,7 +41,7 @@ public class MetadataProperties {
             RECOVER_TIME_WINDOW = Integer.parseInt(properties.getProperty("recoverTimeWindow"));
             RECOVER_TRIGGER_THRESHOLD = Integer.parseInt(properties.getProperty("recoverTriggerThreshold"));
             RECOVER_CHECKPOINT_TIMEOUT = Integer.parseInt(properties.getProperty("recoverCheckpointTimeout"));
-            IGNORE_NODE = properties.getProperty("ignoreNode");
+//            IGNORE_NODE = properties.getProperty("ignoreNode");
             IGNORE_PATH = properties.getProperty("ignorePath");
         } catch (Exception e) {
             throw new RuntimeException("load metadata.properties failed");

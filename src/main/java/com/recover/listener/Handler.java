@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class Handler {
 
-    public Exporter exporter;
+    public DataExporter dataExporter;
     public String dbName;
     public HashSet<String> allChildren;
     public CuratorCache cache;
@@ -26,9 +26,9 @@ public class Handler {
         this.cache = cache;
         this.dbName = dbName;
         this.allChildren = allChildren;
-        exporter = new Exporter(cache, dbName, allChildren);
+        dataExporter = new DataExporter(cache, dbName, allChildren);
         final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
-        executorService.scheduleAtFixedRate(exporter, 0, MetadataProperties.getInstance().getRECOVER_CHECKPOINT_TIMEOUT(), TimeUnit.MILLISECONDS);
+        executorService.scheduleAtFixedRate(dataExporter, 0, MetadataProperties.getInstance().getRECOVER_CHECKPOINT_TIMEOUT(), TimeUnit.MILLISECONDS);
     }
 
     public void onChanged(TreeCacheEvent event, LeaderLatch leaderLatch) {
@@ -43,7 +43,7 @@ public class Handler {
             paths.remove(event.getData().getPath());
             cacheMap.put(dbName, paths);
         }
-        exporter.handleExport(paths, leaderLatch);
+        dataExporter.handleExport(paths, leaderLatch);
 
     }
 
