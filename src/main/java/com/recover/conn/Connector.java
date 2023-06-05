@@ -1,31 +1,16 @@
 package com.recover.conn;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class Connector {
-    String url;
-    String username;
-    String password;
-
-    public Connector() {
-        try {
-            final Properties properties = new Properties();
-            final InputStream resource = Connector.class.getResourceAsStream("/jdbc.properties");
-            properties.load(resource);
-            url = properties.getProperty("url");
-            username = properties.getProperty("username");
-            password = properties.getProperty("password");
-        } catch (IOException e) {
-            throw new RuntimeException("connector.properties not found");
-        }
-    }
+    private final ConnProperties properties = ConnProperties.getInstance();
+    String url = properties.getURL();
+    String username = properties.getUSERNAME();
+    String password = properties.getPASSWORD();
 
     public Connection getConnection() {
         try {

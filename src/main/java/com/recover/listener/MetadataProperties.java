@@ -18,12 +18,13 @@ public class MetadataProperties {
     String LISTEN_PATH;
     int RECOVER_TIME_WINDOW;
     int RECOVER_TRIGGER_THRESHOLD;
+    int RECOVER_CHECKPOINT_TIMEOUT;
     String  IGNORE_NODE;
-    String  IGNORE_DIRECTORY;
+    String IGNORE_PATH;
 
     private MetadataProperties() {
         Properties properties = new Properties();
-        final InputStream resource = Client.class.getResourceAsStream("/metadata.properties");
+        final InputStream resource = ZKClient.class.getResourceAsStream("/metadata.properties");
         try {
             properties.load(resource);
         } catch (IOException e) {
@@ -39,8 +40,9 @@ public class MetadataProperties {
             LISTEN_PATH = properties.getProperty("listenPath");
             RECOVER_TIME_WINDOW = Integer.parseInt(properties.getProperty("recoverTimeWindow"));
             RECOVER_TRIGGER_THRESHOLD = Integer.parseInt(properties.getProperty("recoverTriggerThreshold"));
+            RECOVER_CHECKPOINT_TIMEOUT = Integer.parseInt(properties.getProperty("recoverCheckpointTimeout"));
             IGNORE_NODE = properties.getProperty("ignoreNode");
-            IGNORE_DIRECTORY = properties.getProperty("ignoreDirectory");
+            IGNORE_PATH = properties.getProperty("ignorePath");
         } catch (Exception e) {
             throw new RuntimeException("load metadata.properties failed");
         }
